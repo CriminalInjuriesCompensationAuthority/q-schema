@@ -1,6 +1,6 @@
 {
     "name": "q-schema",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "A JSON schema to validate a questionnaire's structure",
     "main": "index.js",
     "scripts": {
