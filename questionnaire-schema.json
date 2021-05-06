@@ -10,7 +10,7 @@
             "required": ["questionnaireDocumentVersion"],
             "properties": {
                 "questionnaireDocumentVersion": {
-                    "enum": ["1.0.0"]
+                    "enum": ["2.0.0"]
                 }
             }
         },
@@ -26,28 +26,35 @@
             "patternProperties": {
                 "^(?:p-?(?:-[a-z0-9]{1,20}){1,20}|system)$": {
                     "type": "object",
-                    "required": ["$schema", "examples", "invalidExamples"],
+                    "required": ["schema"],
+                    "additionalProperties": false,
                     "properties": {
-                        "$schema": {
-                            "const": "http://json-schema.org/draft-07/schema#"
-                        },
-                        "examples": {
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                                "type": "object",
-                                "patternProperties": {
-                                    "^q(?:-[a-z0-9]{1,20}){1,20}$": {}
-                                }
-                            }
-                        },
-                        "invalidExamples": {
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                                "type": "object",
-                                "patternProperties": {
-                                    "^q(?:-[a-z0-9]{1,20}){1,20}$": {}
+                        "schema": {
+                            "type": "object",
+                            "required": ["$schema", "examples", "invalidExamples"],
+                            "properties": {
+                                "$schema": {
+                                    "const": "http://json-schema.org/draft-07/schema#"
+                                },
+                                "examples": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "type": "object",
+                                        "patternProperties": {
+                                            "^q(?:-[a-z0-9]{1,20}){1,20}$": {}
+                                        }
+                                    }
+                                },
+                                "invalidExamples": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "type": "object",
+                                        "patternProperties": {
+                                            "^q(?:-[a-z0-9]{1,20}){1,20}$": {}
+                                        }
+                                    }
                                 }
                             }
                         }
