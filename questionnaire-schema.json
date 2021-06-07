@@ -57,6 +57,17 @@
                                     }
                                 }
                             }
+                        },
+                        "l10n": {
+                            "type": "object",
+                            "properties": {
+                                "vars": {
+                                    "type": "object"
+                                },
+                                "translations": {
+                                    "type": "array"
+                                }
+                            }
                         }
                     }
                 }
